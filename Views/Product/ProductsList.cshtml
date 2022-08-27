@@ -1,0 +1,74 @@
+﻿<script src="~/js/ProductList.js"></script>
+
+
+<div class="wrapper" style='display: grid; height: 100vh; width: 100vw; place-items: center; background-color: #D4E6F1'>
+    <div style="height:60vh;width:60vw;display:flex;flex-direction:column">
+        <div style="width:20%;margin-left:auto;margin-bottom:20px">
+            <button class="btn btn-success" id="addnewProduct" data-bs-toggle="modal" data-bs-target="#AddnewProductModal">
+                Add new Product
+            </button>
+        </div>
+        <div style="border: 1px solid grey; padding: 10px; box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); border-radius: 10px; background: #f8f8f8;">
+            <table class="table table-bordered table-light table-striped border-info table-hover" style="border-width:2px;" id="ProductTable">
+                <thead>
+                    <tr class="border-info" style="border-width:2px;">
+                        <th style="font-size: 15px; font-weight:bold;color:white; background-color: #2E4053; text-align:center;">Photo</th>
+                        <th style="font-size: 15px; font-weight:bold;color:white; background-color: #2E4053; text-align:center;">Name</th>
+                        <th style="font-size: 15px; font-weight:bold;color:white; background-color: #2E4053; text-align:center;">Desciption</th>
+                        <th style="font-size: 15px; font-weight:bold;color:white; background-color: #2E4053; text-align:center;">Price</th>
+                        <th style="font-size: 15px; font-weight:bold;color:white; background-color: #2E4053; text-align:center;">Edit</th>
+                        <th style="font-size: 15px; font-weight:bold;color:white; background-color: #2E4053; text-align:center;">Delete</th>
+
+                    </tr>
+                </thead>
+                <tbody id="ProductTableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    @*Modal for creating a new product*@
+
+    <div class="modal fade" id="AddnewProductModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add new product</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="post" class="FORM">
+                        <div class="mb-3">
+                            <label for="Name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="Name" aria-describedby="Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Description" id="Description" style="height: 100px" required></textarea>
+                                <label for="Description">Description</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Price" class="form-label">Price</label>
+                            <input type="text" class="form-control" id="Price" aria-describedby="Price" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="Photo" class="form-label">Photo</label>
+                            <input class="form-control" type="file" id="Photo" name="Photo">
+                        </div>
+
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="AddnewProductButton">Add Product</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
